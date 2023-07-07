@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTHTJML0ZF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MukulShaarma</title>
 
-  gtag('config', 'G-VTHTJML0ZF');
-</script>
+  <!-- Google Analytics Tracking Code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTHTJML0ZF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
+    gtag('config', 'G-VTHTJML0ZF');
 
-    <title>MukulShaarma</title>
-    <script type="module" crossorigin src="/assets/index-5bcce141.js"></script>
-    <link rel="stylesheet" href="/assets/index-25cf38fa.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-  </body>
+    // Track page view
+    function trackPageView() {
+      gtag('config', 'G-VTHTJML0ZF', { page_path: window.location.pathname });
+    }
+    trackPageView();
+
+    // Track a custom event
+    function trackEvent(category, action, label) {
+      gtag('event', action, {
+        event_category: category,
+        event_label: label
+      });
+    }
+
+    // Track additional data
+    function trackData(key, value) {
+      gtag('set', key, value);
+    }
+
+    // Example usage:
+    trackEvent('User Interaction', 'Click', 'Button');
+    trackData('User ID', '12345');
+    trackData('Location', 'New York');
+  </script>
+
+  <script type="module" crossorigin src="/assets/index-c4ad77bf.js"></script>
+  <link rel="stylesheet" href="/assets/index-fc9f8fd6.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  
+</body>
+
 </html>
